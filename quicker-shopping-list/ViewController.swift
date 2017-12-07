@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  quicker-shopping-list
 //
-//  Created by Robert Argume on 2017-12-06.
+//  Created by Robert Argume and Ling Bao
 //  Copyright © 2017 Robert Argume. All rights reserved.
 //
 
