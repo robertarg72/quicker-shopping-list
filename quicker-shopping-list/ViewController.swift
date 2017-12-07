@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     // Override function for protocol
     override func viewDidLoad() {
         super.viewDidLoad()
+        //We need to initialize the shopping list text views with default values
         shoppingListName.text = defaultShoppingListName
         quantityLabel.text = initialQuantityValue
         quantityLabel2.text = initialQuantityValue
@@ -62,6 +63,8 @@ class ViewController: UIViewController {
         updateQuantityLabel(sender, quantityLabel5)
     }
     
+    // This method allows us detect event when user finishes to editing a new item in the
+    // shopping list. In that moment the quantity should be reseted to 1 because it is a new item
     @IBAction func onTapGestureRecognized(_ sender: Any) {
         shoppingListItem.resignFirstResponder()
         quantityLabel.text = initialQuantityValue
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
     
    
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        // Cancel button will clean items and quantities labels
         shoppingListName.text = defaultShoppingListName
         shoppingListItem.text = ""
         shoppingListItem2.text = ""
