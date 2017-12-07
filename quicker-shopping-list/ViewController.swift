@@ -8,33 +8,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // default initial values
     let initialQuantityValue = "1"
     let defaultShoppingListName = "Shopping List"
     
+    // OUTLETS: Text views that we need to update
     @IBOutlet weak var shoppingListName: UITextField!
     
     @IBOutlet weak var shoppingListItem: UITextField!
     @IBOutlet weak var quantityLabel: UILabel!
     
     @IBOutlet weak var shoppingListItem3: UITextField!
-    
     @IBOutlet weak var quantityLabel3: UILabel!
     
     @IBOutlet weak var shoppingListItem2: UITextField!
-    
     @IBOutlet weak var quantityLabel2: UILabel!
     
     
     @IBOutlet weak var shoppingListItem4: UITextField!
-    
     @IBOutlet weak var quantityLabel4: UILabel!
     
     @IBOutlet weak var shoppingListItem5: UITextField!
-    
-    
     @IBOutlet weak var quantityLabel5: UILabel!
     
+    // Override function for protocol
     override func viewDidLoad() {
         super.viewDidLoad()
         shoppingListName.text = defaultShoppingListName
@@ -47,13 +44,11 @@ class ViewController: UIViewController {
 
     @IBAction func minusButtonPressed(_ sender: UIButton) {
         updateQuantityLabel(sender, quantityLabel)
-        
     }
     
     @IBAction func quantityButton2Pressed(_ sender: UIButton) {
         updateQuantityLabel(sender, quantityLabel2)
     }
-    
     
     @IBAction func quantityButton3Pressed(_ sender: UIButton) {
         updateQuantityLabel(sender, quantityLabel3)
@@ -90,14 +85,15 @@ class ViewController: UIViewController {
     @IBAction func onSaveButtonPressed(_ sender: UIButton) {
     }
     
-    
+    // Private method to reuse the functionality of adding or substracting items
+    // We use tag for button that adds and substract items
     private func updateQuantityLabel(_ sender: UIButton, _ quantityLabel: UILabel!) {
         var quantity = Int(quantityLabel.text!)!
-        
+        // 1 corresponds to Add button
         if sender.tag == 1 {
             quantity = quantity + 1
         }
-        else {
+        else { // Default 0 corresponds to Substract buttons
             quantity = quantity > 0 ? quantity - 1 : 0
         }
         quantityLabel.text = String(quantity)
