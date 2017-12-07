@@ -2,9 +2,8 @@
 //  ViewController.swift
 //  quicker-shopping-list
 //
-//  Created by Robert Argume and Ling Bao
-//  Copyright © 2017 Robert Argume. All rights reserved.
-//
+//  Ling Bao  300901785
+//  Robert Argume 300949529
 
 import UIKit
 
@@ -90,6 +89,7 @@ class ViewController: UIViewController {
     
     @IBAction func onSaveButtonPressed(_ sender: UIButton) {
     }
+    
     
     private func updateQuantityLabel(_ sender: UIButton, _ quantityLabel: UILabel!) {
         var quantity = Int(quantityLabel.text!)!
